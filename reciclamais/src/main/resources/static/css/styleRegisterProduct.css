@@ -1,0 +1,41 @@
+form{
+	color:white;
+	margin-top: 5%;
+	margin-left: 20%;
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+form input{
+	border-radius: 5px;
+	border: 0px;
+}
+
+form .organisationMaterial{
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25% ;
+	width: 70%;
+	margin-left: 5%;
+}
+
+#productDescription{
+	width: 400px;
+	height: 200px;
+	text-align: left;
+	border-radius: 5px;
+	border: 0px;
+}
+
+form .bottonConfirm{
+	text-align: center;
+}
+
+form .styleButton{
+	color:white;
+	background-color: #078418;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	
+	border: 0px;
+}

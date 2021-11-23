@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" th:href="@{/css/styleRegisterProduct.css}" />
+	</head>
+	<body>
+		<!--<form action="#" th:action="@{/product/consultProduct}" th:object="${product}" method="post">
+			<label for="productName">Nome do produto: </label>
+				<input type="text" th:field="*{name}" id="productName" name="productName" placeholder="Nome do produto"/>
+			
+			<label for="productMaterial">Material do produto: </label>
+				<input type="text" th:field="*{material}" id="productMaterial" name="productMaterial" placeholder="Material do produto"/>
+				
+			<label for="productDescription">Descrição do produto: </label>
+				<input type="text" th:field="*{description}" id="productDescription" name="productDescription" placeholder="Descrição do produto"/>
+				
+			<input type="submit" value="Confirmar cadastro"id="confirmRegistration" name="confirmRegistration">
+		</form> -->
+		<div class="container">
+			<header>
+				<div>
+					<img th:src="@{/images/logo.png}" width="100" height="100" />
+				</div>
+				<div class="navBar">
+					<ul>
+						<div class="itens" id="itens-ini"><li>Informações de Reciclagem</li></div>
+						<div class="itens"><li>Cadastrar produto</li></div>
+						<div class="itens" id="itens-fim"><li>Tabela de produtos cadastrados</li></div>
+					</ul>
+				</div>
+			</header>
+			<main>
+				<div class="titulo-pagina" th:object="${product}">
+					<h1>CADASTRAR PRODUTO</h1>
+				</div>
+				<div class="formulario">
+					<form action="#" th:action="@{/product/consultProduct}" th:object="${product}" method="post">
+						<label for="productName">Nome do produto*: </label>
+						<input type="text" th:field="*{name}" id="productName" name="productName" placeholder="ex: Lata de aluminio"/><br>
+						
+						<label for="productMaterial">Material*: </label><br>
+						<div class="organisationMaterial">
+							<div>
+								<input type="radio" th:field="*{material}" id="materialMetal" name="materialMetal" value="Metal">
+								<label for="materialMetal">Metal</label> 
+							</div>
+							
+							<div>
+								<input type="radio" th:field="*{material}" id="materialVidro" name="materialVidro" value="Vidro">
+								<label for="materialVidro">Vidro</label> 
+							</div>
+							
+							<div>
+								<input type="radio" th:field="*{material}" id="materialPapel" name="materialPapel" value="Papel">
+								<label for="materialPapel">Papel</label> 
+							</div>
+							
+							<div>
+								<input type="radio" th:field="*{material}" id="materialPlastico" name="materialPlastico" value="Plastico">
+								<label for="materialPlastico">Plastico</label> 
+							</div>
+						</div><br>
+						
+						<input type="submit" value="Escolher imagem" id="confirmRegistration" class="styleButton" name="confirmRegistration"><br>
+							
+						<label for="productDescription">Descrição do produto*: </label><br>
+						<textarea th:field="*{description}" id="productDescription" name="productDescription" width="100px" height="60px" placeholder="Faça uma descrição, explicando o motivo do produto ser reciclável."/><br>
+						
+						<div class="bottonConfirm">
+							<input type="submit" value="Confirmar cadastro" id="confirmRegistration" class="styleButton" name="confirmRegistration">
+						</div>	
+						
+					</form>
+				</div>
+				
+			</main>
+			
+			<footer>
+				<div class="rodape-left">
+					<p>Email: reclamais@hotmail.com </p>
+					<p>Telefone: 99999999-999999</p>
+				</div>
+				<div class="rodape-right">
+					<ul>
+						<li><a><img th:src="@{/images/logoInsta.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoFace.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoTwitter.png}" width="50" height="50" /> </a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" th:href="@{/css/styleMenuProdutos.css}" />
+	</head>
+	<body>
+		<!--<div th:switch="${products}">
+			<div th:case="*">
+				<div th:each="product : ${products}">
+					<a th:text="${product.name}" th:href="@{/product/infoProduct/{id}(id=${product.id})}"></a>
+				</div>
+			</div>
+		</div> -->
+		
+		<div class="container">
+			<header>
+				<div>
+					<img th:src="@{/images/logo.png}" width="100" height="100" />
+				</div>
+				<div class="navBar">
+					<ul>
+						<div class="itens" id="itens-ini"><li>Informações de Reciclagem</li></div>
+						<div class="itens"><li>Cadastrar produto</li></div>
+						<div class="itens" id="itens-fim"><li>Tabela de produtos cadastrados</li></div>
+					</ul>
+				</div>
+			</header>
+			<main>
+				<div class="titulo-pagina">
+					<h1>ESCOLHA O PRODUTO</h1>
+				</div>
+				<div id="posicoes-materiais" th:switch="${products}">
+					<div class="itens-materiais" th:each="product : ${products}">
+						<a class="organizacao-produtos" th:href="@{/product/infoProduct/{id}(id=${product.id})}">
+							<div class="images-produtos">
+								<img th:src="@{/images/produtoGenerico.png}" width="100" height="100" />
+							</div>
+							
+							<div class="texto-produtos">
+								<h4 th:text="${product.name}"></h4>
+							</div>
+						</a>
+					</div>
+				</div>
+			</main>
+			
+			<footer>
+				<div class="rodape-left">
+					<p>Email: reclamais@hotmail.com </p>
+					<p>Telefone: 99999999-999999</p>
+				</div>
+				<div class="rodape-right">
+					<ul>
+						<li><a><img th:src="@{/images/logoInsta.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoFace.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoTwitter.png}" width="50" height="50" /> </a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+		
+	</body>
+</html>

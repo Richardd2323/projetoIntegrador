@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" th:href="@{/css/styleEscolhaMaterial.css}" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div>
+					<img th:src="@{/images/logo.png}" width="100" height="100" />
+				</div>
+				<div class="navBar">
+					<ul>
+						<div class="itens" id="itens-ini"><li>Informações de Reciclagem</li></div>
+						<div class="itens"><li>Cadastrar produto</li></div>
+						<div class="itens" id="itens-fim"><li>Tabela de produtos cadastrados</li></div>
+					</ul>
+				</div>
+			</header>
+			<main>
+				<div class="titulo-pagina">
+					<h1>ESCOLHA O MATERIAL</h1>
+				</div>
+				<div id="posicoes-materiais">
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/metal}"><img th:src="@{/images/metal.png}" width="100" height="100" /></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/vidro}"><img th:src="@{/images/vidro.png}" width="100" height="100" /></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/papel}"><img th:src="@{/images/papel.png}" width="100" height="100" /></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/plastico}"><img th:src="@{/images/plastico.png}" width="100" height="100" /></a></div>
+				</div>
+			</main>
+			
+			<footer>
+				<div class="rodape-left">
+					<p>Email: reclamais@hotmail.com </p>
+					<p>Telefone: 99999999-999999</p>
+				</div>
+				<div class="rodape-right">
+					<ul>
+						<li><a><img th:src="@{/images/logoInsta.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoFace.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoTwitter.png}" width="50" height="50" /> </a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

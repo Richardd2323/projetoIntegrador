@@ -1,0 +1,46 @@
+main #posicoes-carrossel{
+	display:grid;
+	grid-template-columns: 20% 60% 20% ;
+	margin-left: 15%;
+	margin-right: 15%;
+	place-items: center;
+}
+
+main #posicoes-carrossel .itens-carossel{
+	border-radius: 5px;
+	
+	display:grid;
+	place-items: center;
+}
+
+main #posicoes-carrossel #imageCarrossel{
+	height: 200px;
+	background-color: rgb(255, 255, 255);
+	width: 80%;
+	
+}
+
+main #posicoes-carrossel #setaCarrossel1{
+	 transform: rotateY(180deg);	
+}
+main #posicoes-materiais itens-carossel img{
+	width: 80%;
+	height: 80%;
+	
+}
+
+main #descricao-produto{
+	margin: 3%;
+	background-color: #058416;
+	border-radius: 5px;
+	
+	height: 200px;
+	color: white;
+	margin-bottom: 2%;
+	
+}
+
+main #descricao-produto p{
+	margin-left: 2%;
+	
+}

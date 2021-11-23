@@ -1,0 +1,31 @@
+main #posicoes-materiais{
+	display:grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+}
+
+main #posicoes-materiais .itens-materiais{
+	height: 300px;
+	border-radius: 5px;
+	background-color: white;
+	margin: 3%;
+	display:grid;
+	place-items: center;
+	
+}
+
+main #posicoes-materiais .itens-materiais a{
+	width:100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	
+}
+
+main #posicoes-materiais .itens-materiais img{
+	width: 80%;
+	height: 80%;
+	
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<div class="bodyTable" th:switch="${products}">
+			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>Material</th>
+							<th>Descrição</th>	
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="product : ${products}">
+							<td th:text="${product.id}"></td>
+							<td th:text="${product.name}"></td>
+							<td th:text="${product.material}"></td>
+							<td th:text="${product.description}"></td>
+							<!--<td>
+								<div class="btn-group pull-right">
+									<a class="btnAlterar"
+										th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
+									<a class="btnDeletar"
+										th:href="@{/sig/cliente/{id}(id=${cliente.id})}">Excluir</a>
+								</div>
+							</td>-->
+						</tr>
+					</tbody>
+				</table>
+				<h6 th:text="${message}" class="text-danger"></h6>
+			</div>
+		</div>
+	</body>
+</html>
