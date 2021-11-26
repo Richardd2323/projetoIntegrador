@@ -26,9 +26,7 @@ form .organisationMaterial{
 	border: 0px;
 }
 
-form .bottonConfirm{
-	text-align: center;
-}
+
 
 form .styleButton{
 	color:white;
@@ -36,6 +34,17 @@ form .styleButton{
 	width: 200px;
 	height: 40px;
 	text-align: center;
-	
+	font-weight: bold;
 	border: 0px;
+}
+
+form .styleButton:hover{
+	border: 1.5px solid black;
+	box-shadow: #000000;
+	background-color: #018113;
+	
+}
+
+.textdanger{
+	color:  rgb(252, 198, 10);
 }

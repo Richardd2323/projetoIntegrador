@@ -23,6 +23,18 @@ main #posicoes-carrossel #imageCarrossel{
 main #posicoes-carrossel #setaCarrossel1{
 	 transform: rotateY(180deg);	
 }
+
+main #posicoes-carrossel #setaCarrossel1:hover{
+	 border: 1px solid black;
+	 box-shadow: #000000;
+	 background-color: #0DBC25;
+}
+
+main #posicoes-carrossel #setaCarrossel2:hover{
+	 border: 1px solid black;
+	 box-shadow: #000000;
+	 background-color: #0DBC25;
+}
 main #posicoes-materiais itens-carossel img{
 	width: 80%;
 	height: 80%;
@@ -37,10 +49,23 @@ main #descricao-produto{
 	height: 200px;
 	color: white;
 	margin-bottom: 2%;
-	
+	border: 0.5px solid black;
+	box-shadow: #000000;
 }
 
 main #descricao-produto p{
 	margin-left: 2%;
 	
+}
+
+.retrocederPagina {
+	display: grid;
+	place-items: left;
+	margin-top: 1.5%;
+	margin-left: 4%;
+}
+
+.retrocederPagina a {
+	text-decoration: none;
+	color: white;
 }

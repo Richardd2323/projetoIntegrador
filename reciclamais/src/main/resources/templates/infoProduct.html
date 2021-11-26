@@ -18,9 +18,9 @@
 				</div>
 				<div class="navBar">
 					<ul>
-						<div class="itens" id="itens-ini"><li>Informações de Reciclagem</li></div>
-						<div class="itens"><li>Cadastrar produto</li></div>
-						<div class="itens" id="itens-fim"><li>Tabela de produtos cadastrados</li></div>
+						<div class="itens" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
+						<div class="itens"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
+						<div class="itens" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
 					</ul>
 				</div>
 			</header>
@@ -28,9 +28,14 @@
 				<div class="titulo-pagina" th:object="${product}">
 					<h1 th:text="${product.name}"></h1>
 				</div>
+				
+				<div class="retrocederPagina">
+					<a th:href="@{/product/}">Material</a>
+				</div>
+				
 				<div id="posicoes-carrossel">
 					<div class="itens-carossel" id="setaCarrossel1"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
-					<div class="itens-carossel" id="imageCarrossel"><img th:src="@{/images/produtoGenerico.png}" width="100" height="100" /></div>
+					<div class="itens-carossel" id="imageCarrossel"><img th:src="@{/images/produtoGenerico.png}" width="100" height="100" alt="Produto" /></div>
 					<div class="itens-carossel" id="setaCarrossel2"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
 					
 				</div>

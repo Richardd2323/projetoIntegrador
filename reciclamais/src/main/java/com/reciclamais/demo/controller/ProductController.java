@@ -1,5 +1,9 @@
 package com.reciclamais.demo.controller;
 
+import javax.validation.Valid;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,13 +19,22 @@ import com.reciclamais.demo.servico.ProductServiceI;
 @Controller
 @RequestMapping(path = "/product")
 public class ProductController {
-	
+	Logger logger = LogManager.getLogger(ProductController.class);
 	@Autowired
 	ProductServiceI productService;
 	
 	@GetMapping("/")
 	public ModelAndView home() {
+		
+		
 		return new ModelAndView("escolhaMaterial");
+	}
+	
+	@GetMapping("/table")
+	public ModelAndView table() {
+		ModelAndView mv = new ModelAndView("tableProduct");
+		mv.addObject("products", productService.findAll());
+		return mv;
 	}
 	
 	@GetMapping("/infoProduct")
@@ -39,7 +52,9 @@ public class ProductController {
 	@GetMapping("/consultProduct")
 	public ModelAndView consultproduct(Product product) {
 		ModelAndView mv = new ModelAndView("consultProduct");
+		
 		mv.addObject("products", productService.findAll());
+		
 		return mv;
 	}
 	
@@ -71,8 +86,18 @@ public class ProductController {
 		return mv;
 	}
 	
+	@GetMapping("/consultProduct/{id}")
+	public ModelAndView deleteProduct(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("tableProduct");
+		
+		productService.deleteById(id);
+		modelAndView.addObject("products", productService.findAll());
+		return modelAndView;
+		
+	}
+	
 	@PostMapping("/consultProduct")
-	public ModelAndView save(Product product, BindingResult result) {
+	public ModelAndView save( @Valid Product product, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("tableProduct");
 		if (result.hasErrors()) {
 			modelAndView.setViewName("registerProduct");

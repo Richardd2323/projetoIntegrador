@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" th:href="@{/css/styleTableProduct.css}" />
 	</head>
 	
 	<body>
-		<div class="bodyTable" th:switch="${products}">
-			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
-			<div th:case="*">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Nome</th>
-							<th>Material</th>
-							<th>Descrição</th>	
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="product : ${products}">
-							<td th:text="${product.id}"></td>
-							<td th:text="${product.name}"></td>
-							<td th:text="${product.material}"></td>
-							<td th:text="${product.description}"></td>
-							<!--<td>
-								<div class="btn-group pull-right">
-									<a class="btnAlterar"
-										th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
-									<a class="btnDeletar"
-										th:href="@{/sig/cliente/{id}(id=${cliente.id})}">Excluir</a>
-								</div>
-							</td>-->
-						</tr>
-					</tbody>
-				</table>
-				<h6 th:text="${message}" class="text-danger"></h6>
-			</div>
+		<div class="container">
+			<header>
+				<div>
+					<img th:src="@{/images/logo.png}" width="100" height="100" />
+				</div>
+				<div class="navBar">
+					<ul>
+						<div class="itens" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
+						<div class="itens"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
+						<div class="itens" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
+					</ul>
+				</div>
+			</header>
+			<main>
+				<div class="titulo-pagina" th:object="${product}">
+					<h1>Tabela de produtos cadastrados</h1>
+				</div>
+				<div class="bodyTable" th:switch="${products}">
+					<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+					<div th:case="*">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>Material</th>
+										
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="product : ${products}">
+									<td th:text="${product.id}"></td>
+									<td th:text="${product.name}"></td>
+									<td th:text="${product.material}" id="testId"></td>
+									
+									<td>
+										<div class="btnPos">
+											<a class="btnDeletar"
+												th:href="@{/product/consultProduct/{id}(id=${product.id})}" >Excluir</a>
+											
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<h6 th:text="${message}" class="text-danger"></h6>
+					</div>
+				</div>
+			</main>
+			
+			<footer>
+				<div class="rodape-left">
+					<p>Email: reclamais@hotmail.com </p>
+					<p>Telefone: 99999999-999999</p>
+				</div>
+				<div class="rodape-right">
+					<ul>
+						<li><a><img th:src="@{/images/logoInsta.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoFace.png}" width="50" height="50" /> </a></li>
+						<li><a><img th:src="@{/images/logoTwitter.png}" width="50" height="50" /> </a></li>
+					</ul>
+				</div>
+			</footer>
 		</div>
+		
 	</body>
 </html>

@@ -5,8 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.*;
 
-import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name = "tb_product")
@@ -15,11 +16,14 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotNull
+	@Size(min = 1, max = 100, message = "O nome deve ser preenchido.")
 	private String name;
 	private boolean recycleable;
-	@NotNull
+	@NotNull (message = "O material deve ser selecionado.")
+	@Size
 	private String material;
 	@NotNull
+	@Size(min = 1, max = 250, message = "Uma descrição deve ser feita.")
 	private String description;
 	
 	public Product() {}

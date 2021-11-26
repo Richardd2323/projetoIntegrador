@@ -8,6 +8,8 @@ public interface ProductService {
 	
 	public Iterable<Product> findAll();
 	
+	
+	
 	public Product findById(Long id);
 	
 	public void deleteById(Long id);
