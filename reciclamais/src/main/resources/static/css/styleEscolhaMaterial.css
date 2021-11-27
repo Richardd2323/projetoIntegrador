@@ -30,6 +30,7 @@ main #posicoes-materiais .itens-materiais a{
 	display: grid;
 	place-items: center;
 	
+	
 }
 
 main #posicoes-materiais .itens-materiais img{

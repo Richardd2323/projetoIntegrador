@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" th:href="@{/css/style.css}" />
 		<link rel="stylesheet" th:href="@{/css/styleEscolhaMaterial.css}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<div class="container">
@@ -19,20 +20,24 @@
 				</div>
 			</header>
 			<main>
+				<div class="botao-daltonico" onclick="mudar()" style="cursor:hand">
+					<img th:src="@{/images/iconeDaltonico.png}"/>
+				</div>
 				<div class="titulo-pagina">
 					<h1>ESCOLHA O MATERIAL</h1>
 				</div>
 				<div id="posicoes-materiais">
-					<div class="itens-materiais"><a th:href="@{/product/consultProduct/metal}"><img th:src="@{/images/metal.png}" width="100" height="100" /></a></div>
-					<div class="itens-materiais"><a th:href="@{/product/consultProduct/vidro}"><img th:src="@{/images/vidro.png}" width="100" height="100" /></a></div>
-					<div class="itens-materiais"><a th:href="@{/product/consultProduct/papel}"><img th:src="@{/images/papel.png}" width="100" height="100" /></a></div>
-					<div class="itens-materiais"><a th:href="@{/product/consultProduct/plastico}"><img th:src="@{/images/plastico.png}" width="100" height="100" /></a></div>
-				</div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/metal}"><img th:src="@{/images/metal.png}" width="100" height="100" title="Metal"/></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/vidro}"><img th:src="@{/images/vidro.png}" width="100" height="100" title="Vidro"/></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/papel}"><img th:src="@{/images/papel.png}" width="100" height="100" title="Papel"/></a></div>
+					<div class="itens-materiais"><a th:href="@{/product/consultProduct/plastico}"><img th:src="@{/images/plastico.png}" width="100" height="100" title="Plastico"/></a></div>
+				</div><br><br>
+				
 			</main>
 			
 			<footer>
 				<div class="rodape-left">
-					<p>Email: reclamais@hotmail.com </p>
+					<p>Email: reciclamais@hotmail.com </p>
 					<p>Telefone: 99999999-999999</p>
 				</div>
 				<div class="rodape-right">
@@ -44,5 +49,53 @@
 				</div>
 			</footer>
 		</div>
+		
+		<div vw class="enabled">
+    		<div vw-access-button class="active"></div>
+    		<div vw-plugin-wrapper>
+      			<div class="vw-plugin-top-wrapper"></div>
+    		</div>
+ 		</div>
+ 		
+  		<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  		<script>
+    		new window.VLibras.Widget('https://vlibras.gov.br/app');
+  		</script>
+  		
+  		<script>
+  			var color = document.getElementsByClassName('itens')
+  			var rodape = document.getElementsByTagName('footer')
+  			var main = document.getElementsByTagName('main')
+  			var daltonico = false
+  			function mudar(){
+	
+				if(daltonico == false){
+					daltonico = true
+				}
+				
+				else{
+					daltonico = false
+				}
+				
+				if(daltonico == true){
+					
+					for(i = 0; i < color.length; i++){
+						color[i].style.backgroundColor = "#043371"
+				
+					}
+					
+					rodape[0].style.backgroundColor = "#043371"
+					main[0].style.backgroundColor = "#0A6CA4"
+				}
+				
+				else{
+					
+					window.location.reload();
+				}
+				
+			}
+			
+  		</script>
+  		
 	</body>
 </html>

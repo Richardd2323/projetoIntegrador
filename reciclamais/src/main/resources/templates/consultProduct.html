@@ -3,15 +3,9 @@
 	<head>
 		<link rel="stylesheet" th:href="@{/css/style.css}" />
 		<link rel="stylesheet" th:href="@{/css/styleMenuProdutos.css}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<!--<div th:switch="${products}">
-			<div th:case="*">
-				<div th:each="product : ${products}">
-					<a th:text="${product.name}" th:href="@{/product/infoProduct/{id}(id=${product.id})}"></a>
-				</div>
-			</div>
-		</div> -->
 		
 		<div class="container">
 			<header>
@@ -27,17 +21,22 @@
 				</div>
 			</header>
 			<main>
+				<div class="botao-daltonico" onclick="mudar()">
+					<img th:src="@{/images/iconeDaltonico.png}"/>
+				</div>
+				
 				<div class="titulo-pagina">
 					<h1>ESCOLHA O PRODUTO</h1>
 				</div>
 				
 				<div class="retrocederPagina">
-					<a th:href="@{/product/}">Material</a>
+					<img th:src="@{/images/setaVoltar2.png}"  />
+					<a th:href="@{/product/}">Escolher material</a>
 				</div>
 				
 				<div class="barraPesquisa">
 					<input type="search" name="q" placeholder="Escreva o nome do produto">
-					<button><img th:src="@{/images/lupa.png}" width="20" height="20" /></button>
+					<button><img th:src="@{/images/lupa.png}"  /></button>
 				</div>
 				<div id="posicoes-materiais" th:switch="${products}">
 					<div class="itens-materiais" th:each="product : ${products}">
@@ -51,12 +50,14 @@
 							</div>
 						</a>
 					</div>
-				</div>
+				</div><br><br>
+				
+				
 			</main>
 			
 			<footer>
 				<div class="rodape-left">
-					<p>Email: reclamais@hotmail.com </p>
+					<p>Email: reciclamais@hotmail.com </p>
 					<p>Telefone: 99999999-999999</p>
 				</div>
 				<div class="rodape-right">
@@ -68,6 +69,52 @@
 				</div>
 			</footer>
 		</div>
-		
+		<div vw class="enabled">
+    		<div vw-access-button class="active"></div>
+    		<div vw-plugin-wrapper>
+      			<div class="vw-plugin-top-wrapper"></div>
+    		</div>
+ 		</div>
+ 		
+  		<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  		<script>
+    		new window.VLibras.Widget('https://vlibras.gov.br/app');
+  		</script>
+  		
+  		<script>
+  			var color = document.getElementsByClassName('itens')
+  			var rodape = document.getElementsByTagName('footer')
+  			var main = document.getElementsByTagName('main')
+  			var daltonico = false
+  			function mudar(){
+	
+				if(daltonico == false){
+					daltonico = true
+				}
+				
+				else{
+					daltonico = false
+				}
+				
+				if(daltonico == true){
+					
+					for(i = 0; i < color.length; i++){
+						color[i].style.backgroundColor = "#043371"
+				
+					}
+					
+					rodape[0].style.backgroundColor = "#043371"
+					main[0].style.backgroundColor = "#0A6CA4"
+				}
+				
+				else{
+					
+					window.location.reload();
+				}
+				
+			}
+			
+  		</script>
+  		
 	</body>
 </html>

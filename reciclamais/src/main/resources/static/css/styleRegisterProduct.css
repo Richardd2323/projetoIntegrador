@@ -1,8 +1,8 @@
 form{
 	color:white;
-	margin-top: 5%;
-	margin-left: 20%;
-	margin-right: 20px;
+	margin-top: 1%;
+	margin-left: 25%;
+	margin-right: 25%;
 	font-weight: bold;
 }
 
@@ -14,7 +14,7 @@ form input{
 form .organisationMaterial{
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25% ;
-	width: 70%;
+	width: 100%;
 	margin-left: 5%;
 }
 
@@ -43,6 +43,11 @@ form .styleButton:hover{
 	box-shadow: #000000;
 	background-color: #018113;
 	
+}
+
+form .bottonConfirm{
+	display: grid;
+	place-items: center;
 }
 
 .textdanger{

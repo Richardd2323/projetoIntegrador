@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" th:href="@{/css/style.css}" />
 		<link rel="stylesheet" th:href="@{/css/styleTableProduct.css}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	
 	<body>
@@ -20,6 +21,10 @@
 				</div>
 			</header>
 			<main>
+				<div class="botao-daltonico" onclick="mudar()">
+					<img th:src="@{/images/iconeDaltonico.png}"/>
+				</div>
+				
 				<div class="titulo-pagina" th:object="${product}">
 					<h1>Tabela de produtos cadastrados</h1>
 				</div>
@@ -44,21 +49,34 @@
 									<td>
 										<div class="btnPos">
 											<a class="btnDeletar"
-												th:href="@{/product/consultProduct/{id}(id=${product.id})}" >Excluir</a>
+												th:href="@{/product/consultProduct/{id}(id=${product.id})}" onclick="manda()" >Excluir</a>
 											
 										</div>
 									</td>
+									
+										<script th:inline="javascript">
+								  			/*<![CDATA[*/
+																    
+																
+												    var situacao = /*[[${product.name}]]*/
+																
+																    
+											/*]]>*/
+								  			function manda(){
+												alert('Produto '+'( ' + situacao +' )' +' deletado com sucesso')
+											}
+  									</script>
 								</tr>
 							</tbody>
 						</table>
 						<h6 th:text="${message}" class="text-danger"></h6>
 					</div>
-				</div>
+				</div><br><br>
 			</main>
 			
 			<footer>
 				<div class="rodape-left">
-					<p>Email: reclamais@hotmail.com </p>
+					<p>Email: reciclamais@hotmail.com </p>
 					<p>Telefone: 99999999-999999</p>
 				</div>
 				<div class="rodape-right">
@@ -71,5 +89,66 @@
 			</footer>
 		</div>
 		
+		<div vw class="enabled">
+    		<div vw-access-button class="active"></div>
+    		<div vw-plugin-wrapper>
+      			<div class="vw-plugin-top-wrapper"></div>
+    		</div>
+ 		</div>
+ 		
+  		<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  		<script>
+    		new window.VLibras.Widget('https://vlibras.gov.br/app');
+  		</script>
+  		
+  		<script>
+  			var color = document.getElementsByClassName('itens')
+  			var rodape = document.getElementsByTagName('footer')
+  			var main = document.getElementsByTagName('main')
+  			var th = document.getElementsByTagName('th')
+  			
+  			var td = document.getElementsByTagName('td')
+  			var daltonico = false
+  			function mudar(){
+	
+				if(daltonico == false){
+					daltonico = true
+				}
+				
+				else{
+					daltonico = false
+				}
+				
+				if(daltonico == true){
+					
+					for(i = 0; i < color.length; i++){
+						color[i].style.backgroundColor = "#043371"
+				
+					}
+					
+					for(i = 0; i < th.length; i++){
+						th[i].style.backgroundColor = "#045371"
+				
+					}
+					
+					for(i = 0; i < td.length; i++){
+						td[i].style.backgroundColor = "#045371"
+				
+					}
+					
+					rodape[0].style.backgroundColor = "#043371"
+					main[0].style.backgroundColor = "#0A6CA4"
+				}
+				
+				else{
+					
+					window.location.reload();
+				}
+				
+			}
+			
+  		</script>
+  		
+  		
 	</body>
 </html>

@@ -70,8 +70,23 @@ main {
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid black;
 	box-shadow: #000000;
-	min-height: 500px;
 	
+	
+}
+
+main .botao-daltonico{
+	display: grid;
+	justify-items: right;
+	margin-top: 1%;
+	margin-right: 1%;
+	margin-left: 87%;
+	cursor:pointer;
+	width: 10%;
+	
+}
+
+main .botao-daltonico img{
+	width: 30%;
 }
 main .titulo-pagina{
 	text-align: center;
