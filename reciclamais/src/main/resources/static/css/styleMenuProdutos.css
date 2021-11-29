@@ -44,12 +44,13 @@ main #posicoes-materiais .itens-materiais .organizacao-produtos img{
 
 .retrocederPagina {
 	display: grid;
-	grid-template-columns: 20% 80%;
+	grid-template-columns: 20% 25%;
 	place-items: center;
 	margin-top: 1.5%;
 	margin-left: 4%;
 	width: 25%;
 	height: 30px;
+	cursor:pointer;
 }
 
 .retrocederPagina img {
@@ -57,7 +58,7 @@ main #posicoes-materiais .itens-materiais .organizacao-produtos img{
 	height: 30px;
 }
 
-.retrocederPagina a {
+.retrocederPagina h4 {
 	text-decoration: none;
 	color: white;
 }
@@ -70,6 +71,7 @@ main #posicoes-materiais .itens-materiais .organizacao-produtos img{
 	margin-right: 25%;
 	grid-template-columns: 80% 20%;
 	margin-top: 1.5%;
+	margin-bottom: 1.5%;
 	width:50%;
 }
 

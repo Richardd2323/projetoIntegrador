@@ -13,9 +13,9 @@
 				</div>
 				<div class="navBar">
 					<ul>
-						<div class="itens" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
-						<div class="itens"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
-						<div class="itens" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
+						<div class="itens" onmouseover="entro(this)" onmouseout="saiu(this)" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
+						<div class="itens"  onmouseover="entro(this)" onmouseout="saiu(this)"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
+						<div class="itens"  onmouseover="entro(this)" onmouseout="saiu(this)" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
 					</ul>
 				</div>
 			</header>
@@ -186,6 +186,19 @@
 				window.re
 			}
 			
+			function entro(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#10649C"
+				}
+				
+			}
+			
+			function saiu(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#043371"
+				}
+				
+			}
 			
   		</script>
   		

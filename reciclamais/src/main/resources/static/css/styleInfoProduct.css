@@ -65,19 +65,20 @@ main #descricao-produto p{
 
 .retrocederPagina {
 	display: grid;
-	grid-template-columns: 20% 80%;
+	grid-template-columns: 20% 25%;
 	place-items: center;
 	margin-top: 1.5%;
 	margin-left: 4%;
 	width: 25%;
 	height: 30px;
+	cursor:pointer;
 }
 
 .retrocederPagina img {
 	width:100%;
 	height: 30px;
 }
-.retrocederPagina a {
+.retrocederPagina h4 {
 	text-decoration: none;
 	color: white;
 }

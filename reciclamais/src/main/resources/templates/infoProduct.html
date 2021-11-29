@@ -18,9 +18,9 @@
 				</div>
 				<div class="navBar">
 					<ul>
-						<div class="itens" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
-						<div class="itens"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
-						<div class="itens" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
+						<div class="itens" onmouseover="entro(this)" onmouseout="saiu(this)" id="itens-ini"><a th:href="@{/product/}"><li>Informações de Reciclagem</li></a></div>
+						<div class="itens"  onmouseover="entro(this)" onmouseout="saiu(this)"><a th:href="@{/product/registerProduct}"><li>Cadastrar produto</li></a></div>
+						<div class="itens"  onmouseover="entro(this)" onmouseout="saiu(this)" id="itens-fim"><a th:href="@{/product/table}"><li>Tabela de produtos cadastrados</li></a></div>
 					</ul>
 				</div>
 			</header>
@@ -33,15 +33,15 @@
 					<h1 th:text="${product.name}"></h1>
 				</div>
 				
-				<div class="retrocederPagina">
+				<div class="retrocederPagina" onclick="voltar()">
 					<img th:src="@{/images/setaVoltar2.png}"  />
-					<a th:href="@{/product/}">Escolher material</a>
+					<h4>VOLTAR</h4>
 				</div>
 				
 				<div id="posicoes-carrossel">
-					<div class="itens-carossel" id="setaCarrossel1"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
+					<div class="itens-carossel" onmouseover="entroSetaC(this)" onmouseout="saiuSetaC(this)" id="setaCarrossel1"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
 					<div class="itens-carossel" id="imageCarrossel"><img th:src="@{/images/produtoGenerico.png}" width="100" height="100" alt="Produto" /></div>
-					<div class="itens-carossel" id="setaCarrossel2"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
+					<div class="itens-carossel" onmouseover="entroSetaC(this)" onmouseout="saiuSetaC(this)" id="setaCarrossel2"><img th:src="@{/images/setaCarrossel.png}" width="100" height="100" /></div>
 					
 				</div>
 				
@@ -114,7 +114,37 @@
 			}
 			
 			
+			function voltar(){
+				window.history.back()
+			}
 			
+			function entro(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#10649C"
+				}
+				
+			}
+			
+			function saiu(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#043371"
+				}
+				
+			}
+			
+			function entroSetaC(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#0D76BC"
+				}
+				
+			}
+			
+			function saiuSetaC(obj){
+				if(daltonico == true){
+					obj.style.backgroundColor = "#0A6CA4"
+				}
+				
+			}
 			
   		</script>
   		
