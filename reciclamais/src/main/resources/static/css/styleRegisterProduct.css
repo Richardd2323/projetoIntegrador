@@ -36,6 +36,7 @@ form .styleButton{
 	text-align: center;
 	font-weight: bold;
 	border: 0px;
+	cursor: pointer;
 }
 
 form .styleButton:hover{

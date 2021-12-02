@@ -53,6 +53,11 @@ main #posicoes-materiais .itens-materiais .organizacao-produtos img{
 	cursor:pointer;
 }
 
+.retrocederPagina:hover {
+	text-decoration: underline;
+	color:white;
+}
+
 .retrocederPagina img {
 	width:100%;
 	height: 30px;

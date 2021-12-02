@@ -24,7 +24,12 @@ main #posicoes-carrossel #imageCarrossel{
 }
 
 main #posicoes-carrossel #setaCarrossel1{
-	 transform: rotateY(180deg);	
+	 transform: rotateY(180deg);
+	 cursor: pointer;	
+}
+
+main #posicoes-carrossel #setaCarrossel2{
+	 cursor: pointer;	
 }
 
 main #posicoes-carrossel #setaCarrossel1:hover{
@@ -72,6 +77,11 @@ main #descricao-produto p{
 	width: 25%;
 	height: 30px;
 	cursor:pointer;
+}
+
+.retrocederPagina:hover {
+	text-decoration: underline;
+	color:white;
 }
 
 .retrocederPagina img {

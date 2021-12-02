@@ -4,6 +4,7 @@
 		<link rel="stylesheet" th:href="@{/css/style.css}" />
 		<link rel="stylesheet" th:href="@{/css/styleMenuProdutos.css}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Escolha do produto</title>
 	</head>
 	<body>
 		
@@ -42,7 +43,7 @@
 					<div class="itens-materiais" th:each="product : ${products}">
 						<a class="organizacao-produtos" th:href="@{/product/infoProduct/{id}(id=${product.id})}">
 							<div class="images-produtos">
-								<img th:src="@{/images/produtoGenerico.png}" width="100" height="100" />
+								<img th:src="@{/images/produtoGenerico1.png}" width="100" height="100" />
 							</div>
 							
 							<div class="texto-produtos">
